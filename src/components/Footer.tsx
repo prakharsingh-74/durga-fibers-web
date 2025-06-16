@@ -9,12 +9,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">D</span>
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/78a87c1c-8d5b-49b5-8a0e-5dc5e3be8a9f.png" 
+                  alt="Durga Fibers Logo" 
+                  className="w-6 h-6 object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold">Durga Fibers</h3>
-                <p className="text-xs text-gray-400">Global Trade Solutions</p>
+                <p className="text-xs text-gray-400">Connecting Farms to World</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -32,7 +36,6 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">Home</a></li>
               <li><a href="#about" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">About Us</a></li>
               <li><a href="#products" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">Products</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">Services</a></li>
@@ -86,7 +89,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2024 Durga Fibers. All rights reserved.
+              © 2025 Durga Fibers. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-sm text-gray-400 hover:text-emerald-400 transition-colors">Privacy Policy</a>
