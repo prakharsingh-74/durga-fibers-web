@@ -1,180 +1,170 @@
-
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Shield, TrendingUp, Quote } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
+
+const carouselImages = [
+  {
+    src: "/lovable-uploads/49878813-8997-4101-9491-7855e4730939.png",
+    alt: "Agricultural Products",
+    title: "Premium Agricultural Products",
+    description: "Sourced directly from local farms, ensuring the highest quality and freshness."
+  },
+  {
+    src: "/lovable-uploads/96803b9d-3bd3-4f89-ae15-9ee43567ea2d.png",
+    alt: "Oils & Extracts",
+    title: "Finest Oils & Extracts",
+    description: "Expertly extracted and processed to retain natural flavors and nutrients."
+  },
+  {
+    src: "/lovable-uploads/7d430275-1c90-4470-873a-508c805f85c0.png",
+    alt: "Textile Materials",
+    title: "High-Quality Textile Materials",
+    description: "Durable and versatile materials for various textile applications."
+  }
+];
 
 const Hero = () => {
-  const [api, setApi] = useState<any>();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (!api) return;
-
-    // Auto-play functionality
-    const interval = setInterval(() => {
-      api.scrollNext();
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
     }, 4000);
 
-    return () => clearInterval(interval);
-  }, [api]);
-
-  const carouselImages = [
-    {
-      src: "/lovable-uploads/25e03320-a3e2-44f1-9c71-f423d387afde.png",
-      alt: "Global Trade & Shipping",
-      title: "Global Trade Excellence"
-    },
-    {
-      src: "/lovable-uploads/55fa7e34-5b3e-44a4-9f7e-aeecad05ed08.png",
-      alt: "Quality Products",
-      title: "Premium Quality Assurance"
-    },
-    {
-      src: "/lovable-uploads/6d5cb898-9166-4008-a33c-268c0a64f42e.png",
-      alt: "Agricultural Products",
-      title: "Farm Fresh Products"
-    }
-  ];
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-emerald-50 via-white to-amber-50 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 pt-20 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23000000%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23059669" fill-opacity="0.1"%3E%3Ccircle cx="7" cy="7" r="7"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
-      
-      <div className="container mx-auto px-8 py-12 relative z-10">
-        {/* Hero Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh] pt-20">
+
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left space-y-8 px-4">
+          <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                <span className="block">Connecting</span>
-                <span className="block text-emerald-600">Farms to</span>
-                <span className="block">World</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 max-w-2xl leading-relaxed">
-                Premier import-export solutions for agricultural products, textiles, and industrial goods. 
-                Building bridges between farmers and global markets with quality and reliability.
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border p-2">
+                  <img 
+                    src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
+                    alt="Durga Fibers Logo" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900">Durga Fibers</h1>
+                  <p className="text-gray-600">Connecting Farms to World</p>
+                </div>
+              </div>
+              
+              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Global Trade
+                <span className="block text-emerald-600">Excellence</span>
+              </h2>
+              
+              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                Leading exporter of premium agricultural products, oils, textiles, and raw materials. 
+                Connecting Indian quality with global markets through trust, innovation, and excellence.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-4">
-              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 text-xl">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg">
                 Explore Products
-                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
-              <Button variant="outline" size="lg" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-10 py-5 text-xl">
-                Contact Us
+              <Button variant="outline" size="lg" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-8 py-4 text-lg">
+                Get Quote
               </Button>
             </div>
             
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-12">
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-emerald-600">15+</div>
-                <div className="text-base text-gray-600">Years Experience</div>
+            <div className="grid grid-cols-3 gap-8 pt-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-600">500+</div>
+                <div className="text-gray-600">Global Clients</div>
               </div>
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-emerald-600">50+</div>
-                <div className="text-base text-gray-600">Countries</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-600">50+</div>
+                <div className="text-gray-600">Countries</div>
               </div>
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-emerald-600">1000+</div>
-                <div className="text-base text-gray-600">Clients</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-600">15+</div>
+                <div className="text-gray-600">Years Experience</div>
               </div>
             </div>
           </div>
           
-          {/* Right Side - Larger Image Carousel */}
-          <div className="relative px-4">
-            <Carousel 
-              setApi={setApi}
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full max-w-2xl mx-auto"
-            >
-              <CarouselContent>
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-96 lg:h-[500px] object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                        <div className="p-8 text-white">
-                          <h3 className="text-2xl font-semibold">{image.title}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
+          {/* Right Content - Enhanced Carousel */}
+          <div className="relative">
+            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+              {carouselImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+                    index === currentSlide ? 'translate-x-0' : 
+                    index < currentSlide ? '-translate-x-full' : 'translate-x-full'
+                  }`}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <h3 className="text-2xl font-bold text-white mb-2">{image.title}</h3>
+                    <p className="text-white/90">{image.description}</p>
+                  </div>
+                </div>
+              ))}
+              
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {carouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentSlide ? 'bg-white' : 'bg-white/50'
+                    }`}
+                  />
                 ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-6" />
-              <CarouselNext className="right-6" />
-            </Carousel>
-            
-            {/* Feature Cards */}
-            <div className="grid grid-cols-2 gap-6 mt-12">
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-all duration-300">
-                <Globe className="h-10 w-10 text-emerald-600 mb-6" />
-                <h3 className="font-semibold text-gray-900 mb-3 text-lg">Global Network</h3>
-                <p className="text-base text-gray-600">Worldwide partnerships and distribution channels</p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300">
-                <Shield className="h-10 w-10 text-green-600 mb-6" />
-                <h3 className="font-semibold text-gray-900 mb-3 text-lg">Quality Assured</h3>
-                <p className="text-base text-gray-600">Certified products with international standards</p>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Founder's Vision Section - Moved to Middle */}
-        <div className="mt-32 mb-20 py-20 bg-white/90 backdrop-blur-sm rounded-3xl border border-emerald-100 mx-4 lg:mx-8">
-          <div className="text-center space-y-12 px-8 lg:px-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 rounded-full">
-              <Quote className="h-10 w-10 text-emerald-600" />
+        {/* Founder's Vision Section - Moved to middle */}
+        <div className="mt-24 bg-white rounded-2xl shadow-xl p-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-100 rounded-full translate-y-24 -translate-x-24 opacity-50"></div>
+          
+          <div className="relative z-10 text-center max-w-4xl mx-auto">
+            <div className="flex justify-center mb-8">
+              <div className="w-24 h-24 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg p-3">
+                <img 
+                  src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
+                  alt="Durga Fibers Logo" 
+                  className="w-full h-full object-contain filter brightness-0 invert"
+                />
+              </div>
             </div>
             
-            <div className="max-w-5xl mx-auto space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">Founder's Vision</h2>
-              
-              <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed italic">
-                "With over 40+ years of experience in international trade, our vision is to bridge the gap 
-                between local farmers and global markets. We believe in creating sustainable partnerships 
-                that not only benefit our clients but also contribute to the economic growth of farming 
-                communities worldwide. Quality, integrity, and innovation are the pillars that guide our 
-                journey in connecting farms to the world."
-              </blockquote>
-              
-              <div className="pt-8">
-                <div className="inline-block">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-emerald-200 p-2 bg-white">
-                    <img 
-                      src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png"
-                      alt="Durga Fibers Logo"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-xl font-semibold text-gray-900">Mr. Founder Name</h4>
-                    <p className="text-emerald-600 font-medium text-lg">Founder & CEO, Durga Fibers</p>
-                    <p className="text-base text-gray-600 mt-2">40+ Years in Global Trade</p>
-                  </div>
-                </div>
-              </div>
+            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Founder's Vision
+            </h3>
+            
+            <blockquote className="text-lg lg:text-xl text-gray-600 italic leading-relaxed mb-8">
+              "Our journey began with a simple vision - to bridge the gap between India's rich agricultural heritage 
+              and global markets. Over the past 40+ years, we have built lasting relationships based on trust, 
+              quality, and commitment. Today, Durga Fibers stands as a testament to the power of dedication 
+              and the endless possibilities that arise when tradition meets innovation."
+            </blockquote>
+            
+            <div className="text-center">
+              <p className="text-xl font-semibold text-emerald-600 mb-2">Shailendra Hatiwal</p>
+              <p className="text-gray-500">Founder & CEO, Durga Fibers</p>
             </div>
           </div>
         </div>

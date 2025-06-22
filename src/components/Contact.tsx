@@ -114,87 +114,59 @@ const Contact = () => {
                   <input type="hidden" name="_next" value="https://durgafibers.com/thank-you" />
                   <input type="hidden" name="_captcha" value="false" />
                   
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name *
-                      </label>
-                      <Input 
-                        id="name"
-                        name="name" 
-                        type="text" 
-                        required 
-                        className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <Input 
-                        id="email"
-                        name="email" 
-                        type="email" 
-                        required 
-                        className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <Input 
-                        id="phone"
-                        name="phone" 
-                        type="tel" 
-                        className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company Name
-                      </label>
-                      <Input 
-                        id="company"
-                        name="company" 
-                        type="text" 
-                        className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                  </div>
-                  
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
                     </label>
                     <Input 
-                      id="subject"
-                      name="subject" 
+                      id="name"
+                      name="name" 
                       type="text" 
                       required 
                       className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                      placeholder="What can we help you with?"
+                      placeholder="Your full name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <Input 
+                      id="email"
+                      name="email" 
+                      type="email" 
+                      required 
+                      className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <Input 
+                      id="phone"
+                      name="phone" 
+                      type="tel" 
+                      required
+                      className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-2">
+                      Your Query *
                     </label>
                     <Textarea 
-                      id="message"
-                      name="message" 
+                      id="query"
+                      name="query" 
                       required 
                       rows={6}
                       className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                      placeholder="Tell us more about your requirements..."
+                      placeholder="Tell us about your requirements, questions, or how we can help you..."
                     />
                   </div>
                   
