@@ -1,53 +1,19 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, Phone, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
-      {/* Top Bar */}
-      <div className="bg-emerald-600 text-white py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center">
-                <Phone className="h-3 w-3 mr-2" />
-                <span>+91 96108 35660</span>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-3 w-3 mr-2" />
-                <span>ceo@durgafibers.com</span>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <Globe className="h-3 w-3 mr-2" />
-              <span>IEC: IVXPS3590H</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
       {/* Main Navigation */}
       <nav className="py-4">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border p-1">
-                <img 
-                  src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
-                  alt="Durga Fibers Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Durga Fibers</h1>
-                <p className="text-xs text-gray-600">Connecting Farms to World</p>
-              </div>
-            </div>
+            {/* Empty left side to maintain layout */}
+            <div></div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
