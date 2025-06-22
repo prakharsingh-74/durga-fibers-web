@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -37,7 +38,7 @@ const Hero = () => {
     <section className="relative min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 pt-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23059669" fill-opacity="0.1"%3E%3Ccircle cx="7" cy="7" r="7"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23059669\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"7\" cy=\"7\" r=\"7\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
@@ -97,7 +98,7 @@ const Hero = () => {
           
           {/* Right Content - Enhanced Carousel */}
           <div className="relative">
-            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[700px] rounded-2xl overflow-hidden shadow-2xl">
               {carouselImages.map((image, index) => (
                 <div
                   key={index}
@@ -136,7 +137,7 @@ const Hero = () => {
         </div>
         
         {/* Founder's Vision Section - Moved to middle */}
-        <div className="mt-24 bg-white rounded-2xl shadow-xl p-12 relative overflow-hidden">
+        <div className="mt-24 bg-white rounded-2xl shadow-xl p-12 pt-16 pr-16 pl-16 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-100 rounded-full translate-y-24 -translate-x-24 opacity-50"></div>
           
@@ -146,7 +147,7 @@ const Hero = () => {
                 <img 
                   src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
                   alt="Durga Fibers Logo" 
-                  className="w-full h-full object-contain filter brightness-0 invert"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
