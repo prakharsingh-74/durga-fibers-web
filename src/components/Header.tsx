@@ -35,12 +35,12 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm border">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border p-1">
                 <img 
-                  src="/lovable-uploads/78a87c1c-8d5b-49b5-8a0e-5dc5e3be8a9f.png" 
+                  src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
                   alt="Durga Fibers Logo" 
-                  className="w-8 h-8 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>

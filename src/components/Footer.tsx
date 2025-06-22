@@ -8,12 +8,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
                 <img 
-                  src="/lovable-uploads/78a87c1c-8d5b-49b5-8a0e-5dc5e3be8a9f.png" 
+                  src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png" 
                   alt="Durga Fibers Logo" 
-                  className="w-6 h-6 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>

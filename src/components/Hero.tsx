@@ -163,7 +163,7 @@ const Hero = () => {
                 <div className="inline-block">
                   <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-emerald-200 p-2 bg-white">
                     <img 
-                      src="/lovable-uploads/78a87c1c-8d5b-49b5-8a0e-5dc5e3be8a9f.png"
+                      src="/lovable-uploads/e3535517-870b-4414-a49c-ed95e4eea9ff.png"
                       alt="Durga Fibers Logo"
                       className="w-full h-full object-contain"
                     />

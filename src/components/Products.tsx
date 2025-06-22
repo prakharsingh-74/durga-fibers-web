@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const products = [
@@ -10,7 +11,12 @@ const Products = () => {
       description: "High-quality cooking oils, essential oils, and natural extracts for global markets",
       image: "/lovable-uploads/96803b9d-3bd3-4f89-ae15-9ee43567ea2d.png",
       category: "Food & Beverages",
-      features: ["Organic Certified", "Export Quality", "Bulk Available"]
+      subProducts: [
+        { name: "Soybean Oil", slug: "soybean-oil" },
+        { name: "Mustard Oil", slug: "mustard-oil" },
+        { name: "Sunflower Oil", slug: "sunflower-oil" },
+        { name: "Coconut Oil", slug: "coconut-oil" }
+      ]
     },
     {
       id: 2,
@@ -18,7 +24,12 @@ const Products = () => {
       description: "Fresh grains, pulses, spices, and processed agricultural commodities",
       image: "/lovable-uploads/3d81157d-e58f-4569-8dfb-8da8f2416b9b.png",
       category: "Agriculture",
-      features: ["Farm Fresh", "Quality Tested", "Global Standards"]
+      subProducts: [
+        { name: "Wheat", slug: "wheat" },
+        { name: "Rice", slug: "rice" },
+        { name: "Turmeric", slug: "turmeric" },
+        { name: "Cumin Seeds", slug: "cumin-seeds" }
+      ]
     },
     {
       id: 3,
@@ -26,7 +37,12 @@ const Products = () => {
       description: "Premium cotton, synthetic fibers, and textile manufacturing materials",
       image: "/lovable-uploads/7d430275-1c90-4470-873a-508c805f85c0.png",
       category: "Textiles",
-      features: ["High Grade", "Bulk Supply", "Custom Specifications"]
+      subProducts: [
+        { name: "Cotton Yarn", slug: "cotton-yarn" },
+        { name: "Polyester Fabric", slug: "polyester-fabric" },
+        { name: "Silk Fabric", slug: "silk-fabric" },
+        { name: "Denim Fabric", slug: "denim-fabric" }
+      ]
     },
     {
       id: 4,
@@ -34,7 +50,12 @@ const Products = () => {
       description: "Pure cotton products and raw materials for textile industry",
       image: "/lovable-uploads/a4e44568-f246-4408-bdbf-b77f84c49f0c.png",
       category: "Raw Materials",
-      features: ["100% Natural", "Sustainable", "Premium Quality"]
+      subProducts: [
+        { name: "Raw Cotton", slug: "raw-cotton" },
+        { name: "Cotton Fiber", slug: "cotton-fiber" },
+        { name: "Cotton Seeds", slug: "cotton-seeds" },
+        { name: "Cotton Waste", slug: "cotton-waste" }
+      ]
     }
   ];
 
@@ -74,10 +95,15 @@ const Products = () => {
                   {product.description}
                 </p>
                 <div className="space-y-2">
-                  {product.features.map((feature, index) => (
+                  {product.subProducts.map((subProduct, index) => (
                     <div key={index} className="flex items-center text-sm">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span className="text-gray-700">{feature}</span>
+                      <Link 
+                        to={`/product/${subProduct.slug}`}
+                        className="text-emerald-600 hover:text-emerald-800 hover:underline transition-colors"
+                      >
+                        {subProduct.name}
+                      </Link>
                     </div>
                   ))}
                 </div>
