@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 };
