@@ -1,15 +1,20 @@
-
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ProductDetail = () => {
   const { slug } = useParams();
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const productData: Record<string, any> = {
     "soybean-oil": {
       name: "Soybean Oil",
-      category: "Premium Oils & Extracts",
+      category: "Premium Oils & Extracts", 
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=800",
       description: "Premium quality soybean oil extracted from the finest soybeans sourced from certified farms. Rich in polyunsaturated fats, omega-6 fatty acids, and vitamin E, our soybean oil is perfect for cooking, baking, food processing, and industrial applications. Processed using advanced extraction methods to ensure maximum purity, nutritional value, and extended shelf life.",
       features: [
