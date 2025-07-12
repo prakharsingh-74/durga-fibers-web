@@ -20,9 +20,8 @@ const Header = () => {
               <a href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
               <a href="#products" className="text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
               <a href="#services" className="text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
-              <a href="#contact" className="text-gray-700 hover:text-emerald-600 transition-colors">Contact</a>
               <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                Get Quote
+                <a href="#contact" className="text-white no-underline">Contact</a>
               </Button>
             </div>
             
@@ -46,9 +45,8 @@ const Header = () => {
                 <a href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
                 <a href="#products" className="text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
                 <a href="#services" className="text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
-                <a href="#contact" className="text-gray-700 hover:text-emerald-600 transition-colors">Contact</a>
                 <Button className="bg-emerald-600 hover:bg-emerald-700 text-white w-full">
-                  Get Quote
+                  <a href="#contact" className="text-white no-underline">Contact</a>
                 </Button>
               </div>
             </div>

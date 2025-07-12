@@ -1,5 +1,5 @@
 
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 
 const FloatingButtons = () => {
   // Random WhatsApp number for demo purposes
@@ -34,7 +34,7 @@ const FloatingButtons = () => {
         className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
         aria-label="Contact us on WhatsApp"
       >
-        <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
+        <MessageSquare className="h-6 w-6 group-hover:scale-110 transition-transform" />
       </button>
     </div>
   );
